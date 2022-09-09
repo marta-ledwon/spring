@@ -64,6 +64,14 @@
       <artifactId>spock-spring</artifactId>
       <version>${spock.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
