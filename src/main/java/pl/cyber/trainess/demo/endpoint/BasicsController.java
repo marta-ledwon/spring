@@ -16,9 +16,7 @@ import pl.cyber.trainess.demo.dto.StringRequest;
 import pl.cyber.trainess.demo.service.BasicsService;
 import pl.cyber.trainess.demo.service.KalkulatorService;
 import pl.cyber.trainess.demo.service.ZnajdzSerwis;
-
 import java.util.List;
-
 
 
 @RestController
@@ -325,5 +323,57 @@ restowym nie doszło do jej modyfikacji.
         return kalkulatorService.rownanieKwadratowe2miejsca(request);
     }
 
+    //region Zadanie10
+    /*
+    Za pomocą instrukcji pętli for dla danych wartości x zmieniajacych sie od 0 do 10 oblicz wartość funckji y=3x
+     */
+
+    @GetMapping("/zadanie10a")
+    public String zadanie10a() {
+        return kalkulatorService.zadanie10a();
+    }
     //endregion
+
+    //region zadanie10b
+    /*
+    za pomoca petli do while dla danych wartości x zmieniajcych sie od 0 do 10
+    oblicz wartosc funkcji y=3x
+     */
+    @GetMapping("/zadanie10b")
+    public String zadanie10b() {
+        return kalkulatorService.zadanie10b();
+    }
+
+    /*
+    zadanie 10c
+    za pomoca instrukcji while dla danych wartosci x zmieniajacych sie od 0 do 10
+    oblicz y = 3x
+     */
+    @GetMapping("/zadanie10c")
+    public String zadanie10c() {
+        return kalkulatorService.zadanie10c();
+    }
+
+    @GetMapping("/zadanie11a")
+    public String zadanie11a() {
+        return kalkulatorService.zadanie11a();
+    }
+
+    @GetMapping("/zadanie11aa")
+    public String zadanie11aa() {
+        return kalkulatorService.zadanie11aa();
+    }
+    /*
+    napisz program ktory przy pomocy petli do while przekaze nam wyniki tabliczki mnozenia od 1 do 100
+     */
+    @GetMapping("/zadanie11b")
+    public String zadanie11b(){
+        return kalkulatorService.zadanie11b();
+    }
+    @GetMapping("/zadanie11c")
+    public String zadanie11c(){
+        return kalkulatorService.zadanie11c();
+    }
+
+
 }
