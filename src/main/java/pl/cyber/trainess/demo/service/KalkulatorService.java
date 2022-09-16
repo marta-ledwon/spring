@@ -281,10 +281,10 @@ public class KalkulatorService {
                 result += "\t";
                 kolumna++;
 
-            } while(kolumna<=k);
-            result +="\n";
+            } while (kolumna <= k);
+            result += "\n";
             wiersz++;
-        }while(wiersz<=w);
+        } while (wiersz <= w);
 
         return result;
     }
@@ -298,30 +298,32 @@ public class KalkulatorService {
 
         String result = "Program wyswietla macierz z petli while.\n\n";
 
-        while(wiersz<=w){
+        while (wiersz <= w) {
             kolumna = 1;
-        while(kolumna<=k){
-            result += wiersz*kolumna + "\t";
-            kolumna++;
+            while (kolumna <= k) {
+                result += wiersz * kolumna + "\t";
+                kolumna++;
+            }
+            result += "\n";
+            wiersz++;
         }
-        result += "\n";
-        wiersz++;
-        }return result;
+        return result;
     }
-public String zadanie10d(final IntegerRequest request){
+
+    public String zadanie10d(final IntegerRequest request) {
 
         Integer y = 0;
         StringBuilder result = new StringBuilder("Program oblicza wartosc funkcji y=3x " +
                 "dla x zmienaijacego sie od 0 do wartosci podanej przez uzytkownika");
-        for(int x = 0; x <= request.getParametrA(); x++){
-            y = 3*x;
+        for (int x = 0; x <= request.getParametrA(); x++) {
+            y = 3 * x;
 
             result.append("x = ").append(x).append("\t").append("y = ").append(y).append("\n");
         }
 
         return result.toString();
 
-}
+    }
 
     public String zadanie10e(final IntegerRequest request) {
 
@@ -330,23 +332,23 @@ public String zadanie10d(final IntegerRequest request){
 
         StringBuilder result = new StringBuilder("Program oblicza wartosc funkcji ");
         do {
-            y=3*x;
+            y = 3 * x;
             result.append("x = ").append(x).append("\t").append("y = ").append(y).append("\n");
-        x++;
+            x++;
 
-        }while(x<= request.getParametrA());
+        } while (x <= request.getParametrA());
 
         return result.toString();
-        }
+    }
 
     public String zadanie10f(final IntegerRequest request) {
         Integer x = 0;
 
         StringBuilder result = new StringBuilder("Program oblicza wartosc funkcji y=3*x");
 
-        while(x<=request.getParametrA()){
-            result.append("x = ").append(x).append("\t").append("y = ").append(3*x).append("\n");
-        x++;
+        while (x <= request.getParametrA()) {
+            result.append("x = ").append(x).append("\t").append("y = ").append(3 * x).append("\n");
+            x++;
         }
         return result.toString();
     }
@@ -362,25 +364,42 @@ public String zadanie10d(final IntegerRequest request){
         Integer suma = 0;
         Double srednia = 0.0;
 
-        for(int i = 0; i <iloscLosowan; i++){
+        for (int i = 0; i < iloscLosowan; i++) {
             listaLiczb.add(random.nextInt(100));
         }
-        for(int i = 0; i <listaLiczb.size(); i++){
-            Integer element = listaLiczb.get(i);
+        //region
+//        for (int i = 0; i < listaLiczb.size(); i++) {
+//            Integer element = listaLiczb.get(i);
+//
+//            suma += element;
+//
+//            if (element < min) {
+//                min = element;
+//            }
+//            if (element > max) {
+//                max = element;
+//            }
+//        }
+        //endregion
 
-            suma+= element;
+        for (Integer element:listaLiczb) {
+            suma += element;
 
             if(element<min){
                 min = element;
-            }
-            if(element>max){
+            }if(element>max){
                 max = element;
             }
         }
-
-        return null;
+        srednia = (double) suma / listaLiczb.size();
+        return "dla listy: " + listaLiczb + " min: " + min + " max: "
+                + max + ", natomiast srednia liczby: " + srednia;
     }
+
 }
+
+
+
 
 
 
