@@ -2,10 +2,14 @@ package pl.cyber.trainess.demo.service;
 
 
 import org.springframework.stereotype.Service;
+import pl.cyber.trainess.demo.dto.IntegerRequest;
 import pl.cyber.trainess.demo.dto.RownanieKwRequest;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 
 @Service
@@ -304,9 +308,80 @@ public class KalkulatorService {
         wiersz++;
         }return result;
     }
+public String zadanie10d(final IntegerRequest request){
 
+        Integer y = 0;
+        StringBuilder result = new StringBuilder("Program oblicza wartosc funkcji y=3x " +
+                "dla x zmienaijacego sie od 0 do wartosci podanej przez uzytkownika");
+        for(int x = 0; x <= request.getParametrA(); x++){
+            y = 3*x;
+
+            result.append("x = ").append(x).append("\t").append("y = ").append(y).append("\n");
+        }
+
+        return result.toString();
 
 }
+
+    public String zadanie10e(final IntegerRequest request) {
+
+        Integer y = 0;
+        Integer x = 0;
+
+        StringBuilder result = new StringBuilder("Program oblicza wartosc funkcji ");
+        do {
+            y=3*x;
+            result.append("x = ").append(x).append("\t").append("y = ").append(y).append("\n");
+        x++;
+
+        }while(x<= request.getParametrA());
+
+        return result.toString();
+        }
+
+    public String zadanie10f(final IntegerRequest request) {
+        Integer x = 0;
+
+        StringBuilder result = new StringBuilder("Program oblicza wartosc funkcji y=3*x");
+
+        while(x<=request.getParametrA()){
+            result.append("x = ").append(x).append("\t").append("y = ").append(3*x).append("\n");
+        x++;
+        }
+        return result.toString();
+    }
+
+    public String zadanie12for(final IntegerRequest request) {
+
+        Random random = new Random();
+        Integer iloscLosowan = request.getParametrA();
+        List<Integer> listaLiczb = new ArrayList<>();
+
+        Integer min = 100;
+        Integer max = 0;
+        Integer suma = 0;
+        Double srednia = 0.0;
+
+        for(int i = 0; i <iloscLosowan; i++){
+            listaLiczb.add(random.nextInt(100));
+        }
+        for(int i = 0; i <listaLiczb.size(); i++){
+            Integer element = listaLiczb.get(i);
+
+            suma+= element;
+
+            if(element<min){
+                min = element;
+            }
+            if(element>max){
+                max = element;
+            }
+        }
+
+        return null;
+    }
+}
+
 
 
 

@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pl.cyber.trainess.demo.dto.IntegerListRequest;
-import pl.cyber.trainess.demo.dto.OneStringRequest;
-import pl.cyber.trainess.demo.dto.RownanieKwRequest;
-import pl.cyber.trainess.demo.dto.StringRequest;
+import pl.cyber.trainess.demo.dto.*;
 import pl.cyber.trainess.demo.service.BasicsService;
 import pl.cyber.trainess.demo.service.KalkulatorService;
 import pl.cyber.trainess.demo.service.ZnajdzSerwis;
@@ -363,17 +360,36 @@ restowym nie doszło do jej modyfikacji.
     public String zadanie11aa() {
         return kalkulatorService.zadanie11aa();
     }
+
     /*
     napisz program ktory przy pomocy petli do while przekaze nam wyniki tabliczki mnozenia od 1 do 100
      */
     @GetMapping("/zadanie11b")
-    public String zadanie11b(){
+    public String zadanie11b() {
         return kalkulatorService.zadanie11b();
     }
+
     @GetMapping("/zadanie11c")
-    public String zadanie11c(){
+    public String zadanie11c() {
         return kalkulatorService.zadanie11c();
     }
 
+    @PostMapping("/zadanie10d")
+    public String zadanie10d(@RequestBody IntegerRequest request) {
+        return kalkulatorService.zadanie10d(request);
+    }
 
+    @PostMapping("/zadanie10e")
+    public String zadanie10e(@RequestBody IntegerRequest request) {
+        return kalkulatorService.zadanie10e(request);
+    }
+
+    @PostMapping("/zadanie10f")
+    public String zadanie10f(@RequestBody IntegerRequest request) {
+        return kalkulatorService.zadanie10f(request);
+    }
+    @PostMapping("zadanie12for")
+    public String zadanie12for(@RequestBody IntegerRequest request){
+        return kalkulatorService.zadanie12for(request);
+    }
 }
