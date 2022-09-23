@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: init
+      author: ml
+      changes:
+        - sqlFile:
+            path: ..\db\changelog\schema.init.sql
